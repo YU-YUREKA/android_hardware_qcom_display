@@ -139,6 +139,8 @@ int mapFrameBufferLocked(framebuffer_device_t *dev)
     if (fd < 0)
         return -errno;
 
+    memset(&module->commit, 0, sizeof(struct mdp_display_commit));
+
     struct fb_fix_screeninfo finfo;
     if (ioctl(fd, FBIOGET_FSCREENINFO, &finfo) == -1) {
         close(fd);
