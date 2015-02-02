@@ -44,7 +44,6 @@ struct private_module_t {
     uint32_t bufferMask;
     pthread_mutex_t lock;
     struct fb_var_screeninfo info;
-    struct mdp_buf_fence fence;
     struct mdp_display_commit commit;
     struct fb_fix_screeninfo finfo;
     float xdpi;
